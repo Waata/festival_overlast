@@ -1,0 +1,70 @@
+// General Style Variables
+@import "config/variables";
+@import "config/bootstrap_variables";
+
+// External Frameworks
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Our CSS
+@import "layouts/*";
+@import "components/*";
+@import "pages/*";
+@import "vendor/*";
+
+
+@charset "utf-8";
+
+body {
+  position: relative;
+  background-image: url("../images/background.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  font-family: sans-serif;
+  
+ }
+
+h1 {
+  color: rgba(255, 255, 255, .9);
+  font-size: 28px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  // text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  /*background: url("../images/middleman.png") no-repeat center 100px;*/
+  padding: 150px 0 10px;
+  margin: 0; 
+}
+
+h4 {
+  color: rgba(255, 255, 255, .8);
+  font-weight: lighter;
+}
+
+
+
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s; }
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+   -webkit-transform: scale(0);
+   opacity: 0;
+  }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}

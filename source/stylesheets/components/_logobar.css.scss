@@ -1,0 +1,34 @@
+.logobar {
+  position: fixed;
+  // left: 0px;
+  // top: 0px;
+  z-index: 1;
+  width: 100%;
+  background-color: black;
+  height: 80px;
+  .collapse-button {
+    width: 20px;
+    margin-bottom: -7px;  
+  }
+  a {
+    text-decoration: none;
+    color: white
+  }
+}
+
+.logos {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: auto;
+  padding: 5px;  
+}
+
+.logo {
+  flex: 0 1 auto;
+  align-self: auto;
+}
