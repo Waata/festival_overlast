@@ -1,15 +1,12 @@
 ---
 title: Festival overlast
 ---
-
 <div class="welcome container text-center">
-  <h1>Ondervindt u overlast van een evenement bij u in de buurt?</h1>
-  <h4>Door hier uw klacht achter te laten helpt u ons dit probleem beter in kaart te brengen. De oplossing begint bij úw geluid.</h4>
+  <% data.welcome.each do |welcome| %>
+  <%= welcome["title"] %> 
+  <%= welcome["description"] %>
+  <% end %>
   <button type="button" class="btn btn-primary">Meld Nu</button>
-  <p>
-  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseHoe" aria-expanded="false" aria-controls="collapseHoe">
-    Hoe werkt het?!
-  </button>
-</p>
+  <p> <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseHoe" aria-expanded="false" aria-controls="collapseHoe">Hoe werkt het?!</button></p>
 </div>
 
