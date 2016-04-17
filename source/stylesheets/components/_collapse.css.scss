@@ -1,10 +1,11 @@
 .card-block {
   // background-image: url('../../images/backgrounddropdown.PNG');
   background-color: black;
-  height: 300px;
+  height: auto;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  padding-bottom: 30px;
 }
 
 .btn-secondary {
@@ -29,5 +30,5 @@
 }
 
 // .card-text {
-//   padding-top: 115px;
+//   padding-bottom: 115px;
 // }

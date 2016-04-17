@@ -6,7 +6,7 @@ title: Festival overlast
   <%= welcome["title"] %> 
   <%= welcome["description"] %>
   <% end %>
-  <button type="button" class="btn btn-primary">Meld Nu</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Meld Nu</button>
   <p> <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseHoe" aria-expanded="false" aria-controls="collapseHoe">Hoe werkt het?!</button></p>
 </div>
-
+<%= partial "modal" %>

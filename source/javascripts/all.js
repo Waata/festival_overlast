@@ -4,3 +4,6 @@
 
 
 // alert("Welkom op de Beta site van Geluidoverlast")
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
