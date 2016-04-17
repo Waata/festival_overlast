@@ -1,4 +1,4 @@
-## Démarrer un nouveau projet.
+Check out the preview Site on:
 
-1. Forkez le repo
-1. Renommez-le puis clonez-le sur votre ordinateur
+
+http://waata.github.io/festival_overlast/
