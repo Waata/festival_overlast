@@ -35,10 +35,16 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+
  }
+ 
  .footer {
-  padding-top: 400px;
+  padding-top: 475px;
  }
+
+.modal {
+  margin-top: 160px;
+}
 
 
 
@@ -47,8 +53,6 @@ h1 {
   font-size: 28px;
   letter-spacing: -1px;
   text-transform: uppercase;
-  // text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  /*background: url("../images/middleman.png") no-repeat center 100px;*/
   padding: 20px 0 10px;
   margin: 0; 
 }
@@ -61,14 +65,58 @@ h4 {
   border-color: white;
   background-color: transparent;
 }
-@media screen and (max-width: 720px) {
-  .welcome {
-    padding-top: 150px;
+@media screen and (max-width: 1600px) {
+ body {
+    background-size: 100%
   }
+  .logobar {
+  margin-right: auto;
+  margin-left: auto;
+  width: 83%;
+}
+.card-block {
+  margin-right: auto;
+  margin-left: auto;
+  width:83%;
+}
+}
+
+@media screen and (max-width: 1300px) {
+ body {
+      background-size: cover;
+  }
+    .logobar {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+.card-block {
+  margin-right: auto;
+  margin-left: auto;
+  width:100%;
+}
    .footer {
-  padding-top: 50px;
+  padding-top: 200px;
  }
 }
+
+
+@media screen and (max-width: 720px) {
+
+  .welcome {
+    padding-top: 100px;
+  }
+   .footer {
+  padding-top: 25px;
+ }
+}
+
+@media (min-width: 768px){
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: right;
+}
+}
+
 .welcome {
 
   -webkit-animation-name: welcome;
