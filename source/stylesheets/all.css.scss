@@ -23,69 +23,78 @@ html {
 }
 
 body {
-    display: table;
-    width: 100%;
-    height: 100%;
+  display: table;
+  width: 100%;
+  height: 100%;
     // padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url('../images/background.png') no-repeat bottom center scroll;
+    background: url('../images/backgroundfull.jpg') no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 
- }
- 
- .footer {
-  padding-top: 475px;
- }
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 25px;
+    margin: 0 auto;
 
-.modal {
-  margin-top: 160px;
-}
+  }
+
+  .fa-twitter {
+    padding-right: 5px;
+  }
+
+  .modal {
+    margin-top: 160px;
+  }
 
 
 
-h1 {
-  color: rgba(255, 255, 255, .9);
-  font-size: 28px;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  padding: 20px 0 10px;
-  margin: 0; 
-}
+  h1 {
+    color: rgba(255, 255, 255, .9);
+    font-size: 28px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    padding: 20px 0 10px;
+    margin: 0; 
+  }
 
-h4 {
-  color: rgba(255, 255, 255, .8);
-  font-weight: lighter;
-}
-.btn-primary {
-  border-color: white;
-  background-color: transparent;
-}
-@media screen and (max-width: 1600px) {
- body {
+  h4 {
+    color: rgba(255, 255, 255, .8);
+    font-weight: lighter;
+  }
+  .btn-primary {
+    border-color: white;
+    background-color: transparent;
+  }
+  @media screen and (max-width: 1600px) {
+   body {
     background-size: 100%
   }
   .logobar {
-  margin-right: auto;
-  margin-left: auto;
-  width: 83%;
-}
-.card-block {
-  margin-right: auto;
-  margin-left: auto;
-  width:83%;
-}
+    margin-right: auto;
+    margin-left: auto;
+    width: 83%;
+  }
+  .card-block {
+    margin-right: auto;
+    margin-left: auto;
+    width:83%;
+  }
 }
 
 @media screen and (max-width: 1300px) {
  body {
-      background-size: cover;
-  }
-    .logobar {
+  background-size: cover;
+}
+.logobar {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -95,29 +104,30 @@ h4 {
   margin-left: auto;
   width:100%;
 }
-   .footer {
-  padding-top: 200px;
- }
+.footer {
+}
 }
 
 
 @media screen and (max-width: 720px) {
 
   .welcome {
-    padding-top: 100px;
+    padding-top: 50px;
+
   }
-   .footer {
-  padding-top: 25px;
- }
+  .footer {
+    padding-bottom: 25px;
+  }
 }
 
 @media (min-width: 768px){
-.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: right;
-}
+  }
 }
 
 .welcome {
+  padding-top: 20px;
 
   -webkit-animation-name: welcome;
   -webkit-animation-duration: .9s; }
