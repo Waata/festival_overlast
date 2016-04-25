@@ -1,0 +1,44 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Meld uw klacht</h4>
+    </div>
+    <form role="form" data-toggle="validator">
+        <div class="modal-body">
+            Dank u wel voor uw geluid! Wij zullen deze informatie gebruiken om de communicatie tussen buurtbewoners, evenementen en de gemeente te bevorderen. Om uw stem te laten gelden vragen wij om uw emailadres.<br>
+            <br>
+            <div class="form-group">
+                <label for="inputEmail" class="control-label">E-mailadres</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Dit e-mailadres is ongeldig">
+                <div class="help-block with-errors"></div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="q4PrevButton">Vorige vraag</button>
+            <button type="submit" class="btn btn-primary" id="q4NextButton">Volgende</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+$('form').validator().on('submit', function (e) {
+  if (!e.isDefaultPrevented()) {
+    e.preventDefault();
+    
+    // Store data
+    $form_data.email = $("#inputEmail").val();
+    
+    // Go to next question
+    $('form').validator('destroy');
+    $( "#myModalDialog" ).load( "question8.html");
+  }
+});
+
+$('#q4PrevButton').on('click', function () {
+    $('form').validator('destroy');
+    $( "#myModalDialog" ).load( "question6.html");
+});
+
+</script>

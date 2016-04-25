@@ -42,7 +42,6 @@ body {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    font-size: 25px;
     margin: 0 auto;
 
   }
@@ -51,29 +50,44 @@ body {
     padding-right: 5px;
   }
 
-  .modal {
-    margin-top: 160px;
+
+  
+
+  .modal-body {
+    position: relative;
+    padding: 15px;
+    color: royalblue;
   }
 
 
 
-  h1 {
-    color: rgba(255, 255, 255, .9);
-    font-size: 28px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    padding: 20px 0 10px;
-    margin: 0; 
-  }
+  // h1 {
+  //   color: rgba(255, 255, 255, .9);
+  //   font-size: 28px;
+  //   letter-spacing: -1px;
+  //   text-transform: uppercase;
+  //   padding: 20px 0 10px;
+  //   margin: 0; 
+  // }
 
   h4 {
     color: rgba(255, 255, 255, .8);
     font-weight: lighter;
   }
-  .btn-primary {
+
+
+  .btn-home{
     border-color: white;
     background-color: transparent;
+    margin-top: 20px;
+    height: 65px;
+    width: 158px;
+    border-radius: 10px;
+    border: solid 2px;
   }
+
+
+
   @media screen and (max-width: 1600px) {
    body {
     background-size: 100%

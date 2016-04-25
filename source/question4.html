@@ -1,0 +1,53 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Meld uw klacht</h4>
+    </div>
+    <form role="form" data-toggle="validator">
+        <div class="modal-body">
+            Ondervindt u deze geluidsoverlast binnen, buiten of beide? (meerdere opties mogelijk)<br>
+            <div class="radio">
+                <label><input type="radio" name="insideOutside" value="binnen" checked="checked">Binnen</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="insideOutside" value="buiten">Buiten</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="insideOutside" value="beide">Beide</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="prevButton">Vorige vraag</button>
+            <button type="submit" class="btn btn-primary" id="nextButton">Volgende</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+
+$('#prevButton').on('click', function () {
+    $( "#myModalDialog" ).load( "question3.html");
+});
+
+$('#nextButton').on('click', function () {
+    $( "#myModalDialog" ).load( "question5.html");
+});
+
+$('form').validator().on('submit', function (e) {
+  if (!e.isDefaultPrevented()) {
+    e.preventDefault();
+    
+    // Read data
+    var noise_indoor = $("input:radio[name='insideOutside']:checked").val();
+    
+    // Store data
+    $form_data.noise_indoor = noise_indoor;
+
+    // Go to next page
+    $('form').validator('destroy');
+    $( "#myModalDialog" ).load( "question5.html");
+  }
+});
+
+</script>

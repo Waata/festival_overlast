@@ -1,0 +1,65 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Meld uw klacht</h4>
+    </div>
+    <form role="form" data-toggle="validator">
+        <div class="modal-body">
+            Wanneer ondervind/ondervond u dit ongemak? <br>
+            <div class="radio">
+                <label><input type="radio" name="date" value="" id="nowRadio" checked="checked">Nu</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="date" value="anders" id="otherRadio">Anders</label>
+            </div>
+            <div class="form-inline" id="inputOtherGroup" style="display:none;">
+                <input type="number" min="1" max="31" class="form-control" size="2" maxlength="2" placeholder="dd" id="inputDay">-<input type="number" min="1" max="12" class="form-control" size="2" maxlength="2" placeholder="mm" id="inputMonth">-<input type="number" min="2014" max="2016" class="form-control" size="4" maxlength="4" placeholder="jjjj" id="inputYear"> 
+                <input type="number" min="0" max="23" class="form-control" size="2" maxlength="2" placeholder="uu" id="inputHour">:<input type="number" min="0" max="59" class="form-control" size="2" maxlength="2" placeholder="mm" id="inputMinute">
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="prevButton">Vorige vraag</button>
+            <button type="submit" class="btn btn-primary" id="nextButton">Volgende</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+$("#nowRadio").change(function() {
+    if(this.checked) {
+        $("#inputOtherGroup").hide();
+    }
+});
+
+$("#otherRadio").change(function() {
+    if(this.checked) {
+        $("#inputOtherGroup").show();
+        $("#inputDay").focus();
+    }
+});
+
+$('#prevButton').on('click', function () {
+    $( "#myModalDialog" ).load( "question5.html");
+});
+
+$('form').validator().on('submit', function (e) {
+  if (!e.isDefaultPrevented()) {
+    e.preventDefault();
+    
+    // Read data
+    var radio_option = $("input:radio[name='date']:checked").val();
+    if(radio_option == "anders") {
+        // Store data
+        $form_data.datetime = $("#inputYear").val() + '-' + $("#inputMonth").val() + '-' + $("#inputDay").val() + ' ' + $("#inputHour").val() + ':' + $("#inputMinute").val() + ':00';
+    }
+            
+    // Go to next question    
+    $('form').validator('destroy');
+    $('#myModalDialog').load( "question7.html");
+  }
+});
+
+
+</script>
