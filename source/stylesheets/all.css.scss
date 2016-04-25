@@ -37,6 +37,12 @@ body {
     -o-background-size: cover;
 
   }
+
+  #map {
+    width: 100%;
+    height: 400px;
+    background-color: #CCC;
+  }
   
   .footer {
     position: absolute;
@@ -50,13 +56,34 @@ body {
     padding-right: 5px;
   }
 
+  .awesome {
+    font-size: 40px;
+    padding-bottom: 10px;
+  }
 
-  
+  .modal{
+    margin-top: 50px;
+  }
+
+  .modal-dialog {
+    background: transparent;
+    margin-top: 65px;
+  }
+
+  .modal-title {
+    color: black;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .modal-content {
+    text-align: -webkit-auto;
+  }
 
   .modal-body {
     position: relative;
     padding: 15px;
-    color: royalblue;
+    color: black;
   }
 
 
