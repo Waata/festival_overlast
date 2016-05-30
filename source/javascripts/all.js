@@ -7,3 +7,5 @@
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+$('#btn-secondary').fatoggle(['fa-play','fa-pause'],OPTIONS);

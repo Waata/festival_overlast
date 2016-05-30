@@ -1,10 +1,17 @@
 <div class="collapse" id="HoeWerktHet">
   <div class="card card-block">
     <div class="card-text">
-     <% data.collapse.each do |collapse| %>
-     <%= collapse["title"] %> 
-     <%= collapse["description"] %>
-     <% end %>
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <% data.collapse.each do |collapse| %>
+          <%= collapse["description"] %> 
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+         <%= collapse["title"] %>
+         <% end %>
+         </div>
+     </div>
    </div>
  </div>
 </div>

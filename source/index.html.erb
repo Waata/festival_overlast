@@ -3,14 +3,12 @@ title: Festival overlast
 ---
 
         <div><button class="btn btn-secondary" data-toggle="collapse" href="#HoeWerktHet" aria-expanded="false" aria-controls="collapseHoe">
-        <i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-<!--         <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#HoeWerktHet" aria-expanded="false" aria-controls="HoeWerktHet"><i class="fa fa-sort-asc" aria-hidden="true"></i>
-        </button> -->
+        <i class="fa fa-sort-desc" aria-hidden="true"></i></div>
         <div class="welcome container text-center">
           <% data.welcome.each do |welcome| %>
           <h1>  <%= welcome["title"] %> </h1>
           <h4>  <%= welcome["description"] %></h4>
           <% end %>
-          <button type="button" class="btn btn-home" data-toggle="modal" data-target="#myModal" data-whatever="@mdo">Meld Nu</button>
+          <button type="button" class="btn btn-home" data-toggle="modal" data-target="#myModal" data-whatever="@mdo" data-toggle="tooltip">Meld Nu</button>
         </div>
       </div>

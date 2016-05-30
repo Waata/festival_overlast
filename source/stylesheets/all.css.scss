@@ -44,6 +44,24 @@ body {
     background-color: #CCC;
   }
   
+  .card-text {
+    padding-left: 30px;
+    padding-right: 30px;
+        bottom: 0;
+    left: 50%;
+    border-left: 2px dotted #444;
+    //     border-left-style: dashed;
+    // border-right-style: dashed;
+  }
+
+  .random {
+
+    left: 50%;
+    border-left: 2px dotted #444;
+  }
+
+
+
   .footer {
     position: absolute;
     bottom: 0px;
@@ -115,7 +133,7 @@ body {
 
 
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1700px) {
    body {
     background-size: 100%
   }
@@ -154,11 +172,19 @@ body {
 
   .welcome {
     padding-top: 50px;
+    font-size: 10 em;
 
   }
   .footer {
     padding-bottom: 25px;
+    font-size: 10px;
   }
+  .card-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+  }
+  
 }
 
 @media (min-width: 768px){
