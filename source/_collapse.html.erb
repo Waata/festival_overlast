@@ -2,15 +2,14 @@
   <div class="card card-block">
     <div class="card-text">
       <div class="row">
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6 left">
           <% data.collapse.each do |collapse| %>
           <%= collapse["description"] %> 
         </div>
-
         <div class="col-md-6 col-sm-6">
          <%= collapse["title"] %>
          <% end %>
-         </div>
+       </div>
      </div>
    </div>
  </div>

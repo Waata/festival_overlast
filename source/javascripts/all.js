@@ -8,4 +8,10 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-$('#btn-secondary').fatoggle(['fa-play','fa-pause'],OPTIONS);
+//TOGGLE FONT AWESOME ON CLICK
+$('.faq-links').click(function(){
+    $(this).find('i').toggleClass('fa-plus-square-o fa-2x fa-minus-square-o fa-2x')
+});
+$('.faq-links').blur(function(){
+    $(this).find('i').toggleClass('fa-plus-square-o fa-2x fa-minus-square-o fa-2x')
+});
