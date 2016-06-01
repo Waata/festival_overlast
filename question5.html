@@ -1,0 +1,72 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Meld uw klacht</h4>
+    </div>
+    <form role="form" data-toggle="validator">
+        <div class="modal-body">
+            Om een beter te beeld te krijgen waar mensen wel of niet overlast ondervinden willen wij u vragen om uw adres. Deze gegevens zullen niet worden opgeslagen maar enkel gebruikt worden om te transformeren naar een geo-locatie die gelinkt is met uw melding, <u>niet</u> met verdere persoonsgegevens.<br>
+            <br>
+            <div class="form-group">
+                <label for="inputStreet">Straat</label>
+                <input type="text" class="form-control" id="inputStreet" placeholder="Straat" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="inputNumber">Huisnummer</label>
+                <input type="text" class="form-control" id="inputNumber" placeholder="Huisnummer">
+            </div>
+            <div class="form-group">
+                <label for="inputCity">Plaats</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Plaats" required>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="prevButton">Vorige vraag</button>
+            <button type="submit" class="btn btn-primary" id="nextButton">Volgende</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+$('form').validator().on('submit', function (e) {
+  if (!e.isDefaultPrevented()) {
+    e.preventDefault();
+    
+    // Compute latitude and longitude
+    var addr = $("#inputStreet").val() + ' ' +  $("#inputNumber").val() + ' ' +  $("#inputCity").val();
+    geocodeAddress(addr, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            latlon = results[0].geometry.location;
+        
+            // Store data
+            $form_data.latitude = latlon.lat();
+            $form_data.longitude = latlon.lng();
+            
+            // Go to next question    
+            $('form').validator('destroy');
+            $('#myModalDialog').load( "question6.html");
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+  }
+});
+
+$('#prevButton').on('click', function () {
+    // Remove data
+    
+    // Go to previous question
+    $('form').validator('destroy');
+    if(!$form_data.event_caused) {
+        $( "#myModalDialog" ).load( "question1.html");
+    } else if($is_noise_complaint) {
+        $( "#myModalDialog" ).load( "question4.html");
+    } else {
+        $( "#myModalDialog" ).load( "question2.html");
+    }
+});
+
+</script>

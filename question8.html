@@ -1,0 +1,87 @@
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Meld uw klacht</h4>
+    </div>
+    <div class="modal-body">
+        Uw melding is gemaakt!<br>
+        <p id="causing_events_text" style="display:none;"><br>De volgende evenementen bij u in de buurt zijn mogelijk de oorzaak van de overlast:<p>
+        <ol id="event_list"></ol>
+        <br>
+        <div id="map"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="prevButton">Vorige vraag</button>
+        <button type="button" class="btn btn-primary" id="nextButton" data-dismiss="modal">Klaar</button>
+    </div>
+</div>
+
+<script>
+
+var map;
+function initMap() {
+    var myLatLng = {lat: $form_data.latitude, lng: $form_data.longitude};
+
+   map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,
+    scrollwheel: false,
+    zoom: 13,
+    disableDefaultUI: true,
+    zoomControl: true
+  });
+  
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Uw locatie!',
+    animation: google.maps.Animation.DROP
+  });
+}
+initMap();
+
+
+$('#prevButton').on('click', function () {
+    $( "#myModalDialog" ).load( "question7.html");
+});
+
+console.log($form_data);
+
+$.post("save.php", $form_data, function(data, textStatus, jqXHR) {
+    console.log(data);
+    console.log(textStatus);
+    
+    if ($form_data.event_caused == true)
+    {        
+        var obj = jQuery.parseJSON(data);
+        console.log('Object:');
+        console.log(obj);
+        if (obj.status == 'ok') {
+            // Output events  
+            for (var i in obj.events) {
+                var event = obj.events[i];
+                console.log(event);
+                
+                $('#causing_events_text').show();
+                
+                // Append to list
+                $("#event_list").append($("<li>").text(event.name + ' (' + event.distance.toFixed(2) + ' km)'));
+                
+                // Create marker    
+                var event_num = parseInt(i)+1
+                var marker = new google.maps.Marker({
+                    position: {lat: event.latitude, lng: event.longitude},
+                    map: map,
+                    title: event.name,
+                    label: event_num.toString()
+                });
+            }
+            
+        } else if (obj.status == 'error') {
+            alert(obj.message);
+        }  
+    }    
+});
+
+
+</script>
